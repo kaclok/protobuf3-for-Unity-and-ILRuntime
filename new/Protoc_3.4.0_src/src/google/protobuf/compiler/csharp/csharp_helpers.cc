@@ -292,7 +292,7 @@ std::string ToCSharpName(const std::string& name, const FileDescriptor* file) {
     // the C# namespace.
     classname = name.substr(file->package().size() + 1);
   }
-  result += StringReplace(classname, ".", ".", true);
+  result += StringReplace(classname, ".", ".Types.", true);
   return "global::" + result;
 }
 
