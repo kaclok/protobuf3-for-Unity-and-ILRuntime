@@ -243,7 +243,7 @@ void ReflectionClassGenerator::WriteGeneratedCodeInfo(const Descriptor* descript
   if (descriptor->field_count() > 0) {
       std::vector<std::string> fields;
       for (int i = 0; i < descriptor->field_count(); i++) {
-          fields.push_back(GetPropertyName(descriptor->field(i)));
+          fields.push_back(GetPropertyName(descriptor->field(i), false));
       }
       printer->Print("new[]{ \"$fields$\" }, ", "fields", JoinStrings(fields, "\", \""));
   }
